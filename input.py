@@ -20,13 +20,13 @@ class Project:
     an integer Bi (1 ≤ Bi ≤ 105) – the “best before” day for the project,
     an integer Ri (1 ≤ Ri ≤ 100) – the number of roles in the project.
     """
-    def __init__(self, name: str, estimation: int, score: int, best_before: int, roles: int, skill_requirements: list ) -> None:
+    def __init__(self, name: str, estimation: int, score: int, best_before: int, role_count: int, roles: list ) -> None:
         self.name = name
         self.estimation = estimation
         self.score = score
         self.best_before = best_before
+        self.role_count = role_count
         self.roles = roles
-        self.skill_requirements = skill_requirements
         
 
 def file_loader(file_name: str):
@@ -67,7 +67,8 @@ def file_loader(file_name: str):
                 current_project.estimation = data[1]
                 current_project.score = data[2]
                 current_project.best_before = data[3]
-                current_project.roles = data[4]
+                current_project.role_count = data[4]
+            
 
     
     print(contribs)
