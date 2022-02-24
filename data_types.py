@@ -1,4 +1,7 @@
-
+class skill():
+    def __init__(self,skillName,skillLevel):
+        self.name=skillName
+        self.level=skillLevel
 
 class contributor():
     def __init__(self, name,skills):
@@ -15,6 +18,12 @@ class contributor():
             self.skills[skill_name] +=1
         else:
             self.skills[skill_name] = 1
+
+    def canWorkOnProject(self,skillName,skillLevel):
+        for skill in self.skills:
+            if skillName in skill:
+                return skillLevel>skill[1]
+        return False
 
 
 class project():
@@ -34,3 +43,12 @@ class project():
         for skill,person in assignments:
             place_holder[self.roles_ordering.index(skill)] = person
         return place_holder
+
+    def getDueDate(self):
+        return self.due_date
+    def getProjectLength(self):
+        return self.project_length
+    def getScore(self):
+        return self.score
+    def getRoles(self):
+        return self.roles_orderng
