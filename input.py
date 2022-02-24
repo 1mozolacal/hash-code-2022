@@ -11,7 +11,10 @@ class Contributor:
         self.name = name
         self.skill_num = skill_num
         self.skill = skill
-        
+        self.workingDays = []
+    
+    
+    
 
 class Project:
     """

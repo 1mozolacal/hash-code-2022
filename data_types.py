@@ -15,6 +15,12 @@ class contributor():
             self.skills[skill_name] +=1
         else:
             self.skills[skill_name] = 1
+            
+    def canWorkOnProject(self,skillName,skillLevel):
+        for skill in self.skills:
+            if skillName in skill:
+                return skillLevel>skill[1]
+        return False
 
 
 class project():
