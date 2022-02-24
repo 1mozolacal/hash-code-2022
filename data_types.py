@@ -57,4 +57,4 @@ class project():
         return self.score
 
     def getRoles(self):
-        return self.roles_orderng
+        return self.roles_ordering
