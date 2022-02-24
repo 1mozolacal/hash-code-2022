@@ -1,37 +1,5 @@
 import os
 
-class Skill:
-    def __init__(self, name, level) -> None:
-        self.name = name
-        self.level = level
-        
-
-class Contributor:
-    def __init__(self, name : str = '', skill_num:str = '', skill: list = []) -> None:
-        self.name = name
-        self.skill_num = skill_num
-        self.skill = skill
-        self.workingDays = []
-    
-    
-    
-
-class Project:
-    """
-    an integer Di (1 ≤ Di ≤ 105) – the number of days it takes to complete the project,
-    an integer Si (1 ≤ Si ≤ 105) – the score awarded for project’s completion,
-    an integer Bi (1 ≤ Bi ≤ 105) – the “best before” day for the project,
-    an integer Ri (1 ≤ Ri ≤ 100) – the number of roles in the project.
-    """
-    def __init__(self, name: str, estimation: int, score: int, best_before: int, role_count: int, roles: list ) -> None:
-        self.name = name
-        self.estimation = estimation
-        self.score = score
-        self.best_before = best_before
-        self.role_count = role_count
-        self.roles = roles
-        
-
 def file_loader(file_name: str):
     with open(file_name) as f:
         lines = f.readlines()
