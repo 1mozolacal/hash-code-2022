@@ -1,4 +1,5 @@
 import os
+import data_types
 
 def file_loader(file_name: str):
     with open(file_name) as f:
@@ -11,10 +12,10 @@ def file_loader(file_name: str):
     contribs = []
     # Get contribs
     contrib_skill_count = 0
-    current_person = Contributor()
+    current_person = data_types.Contributor()
     
     # Get proj
-    current_project = Project()
+    current_project = data_types.Project()
     project_count = 0
 
     for line in lines[1:]:
@@ -27,7 +28,7 @@ def file_loader(file_name: str):
                 contrib_skill_count = int(data[1])
 
             elif contrib_skill_count != 0:
-                current_person.skill.append(Skill(data[0], data[1]))
+                current_person.skill.append(data_types.Skill(data[0], data[1]))
                 contrib_skill_count -= 1
                 if contrib_skill_count == 0:
                     contribs.append(current_person)

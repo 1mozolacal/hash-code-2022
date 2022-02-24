@@ -1,4 +1,7 @@
-
+class skill():
+    def __init__(self,skillName,skillLevel):
+        self.name=skillName
+        self.level=skillLevel
 
 class contributor():
     def __init__(self, name,skills):
@@ -47,4 +50,5 @@ class project():
         return self.project_length
     def getScore(self):
         return self.score
-    
+    def getRoles(self):
+        return self.roles_orderng
