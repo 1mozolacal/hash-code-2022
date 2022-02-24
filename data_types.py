@@ -10,9 +10,12 @@ class contributor():
         self.skills = skills
 
     def get_skill(self, skill_name):
-        if not skill_name in self.skills:
+        temp_dict = {}
+        for skill in self.skills:
+            temp_dict[skill.name] = int(skill.level)
+        if not skill_name in temp_dict:
             return 0
-        return self.skills[skill_name]
+        return temp_dict[skill_name]
 
     def improve_skill(self, skill_name):
         if skill_name in self.skills:
@@ -57,4 +60,4 @@ class project():
         return self.score
 
     def getRoles(self):
-        return self.roles_ordering
+        return self.roles
