@@ -23,8 +23,14 @@ class Project:
     an integer Bi (1 ≤ Bi ≤ 105) – the “best before” day for the project,
     an integer Ri (1 ≤ Ri ≤ 100) – the number of roles in the project.
     """
-    def __init__(self, ) -> None:
-        pass
+    def __init__(self, name: str, estimation: int, score: int, best_before: int, roles: int, skill_requirements: list ) -> None:
+        self.name = name
+        self.estimation = estimation
+        self.score = score
+        self.best_before = best_before
+        self.roles = roles
+        self.skill_requirements = skill_requirements
+        
 
 def file_loader(file_name: str):
     with open(file_name) as f:
@@ -38,17 +44,20 @@ def file_loader(file_name: str):
     # Get contribs
     contrib_skill_count = 0
     current_person = Contributor()
-    print(lines[1:])
+    
+    # Get proj
+    current_project = Project()
+    project_count = 0
+
     for line in lines[1:]:
         data = line.removesuffix('\n').split(" ")
         if contribs_num - 1 >= len(contribs):
             if contrib_skill_count == 0:
 
-                print(current_person.name)
                 current_person.name = data[0]
                 current_person.skill_num = data[1]
-
                 contrib_skill_count = int(data[1])
+
             elif contrib_skill_count != 0:
                 current_person.skill.append(Skill(data[0], data[1]))
                 contrib_skill_count -= 1
@@ -56,7 +65,13 @@ def file_loader(file_name: str):
                     contribs.append(current_person)
                     current_person = Contributor()
         else:
-            pass
+            if project_count == 0:
+                current_project.name = data[0]
+                current_project.estimation = data[1]
+                current_project.score = data[2]
+                current_project.best_before = data[3]
+                current_project.roles = data[4]
+
     
     print(contribs)
 
