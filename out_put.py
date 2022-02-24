@@ -3,7 +3,7 @@
 
 
 
-#iput in the form of list of 'directive'
+#input in the form of list of 'directive'
 # directive is [project <object>,assignments <list>]
 # assignment is [contrib <object>,skill <string>]
 
