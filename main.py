@@ -39,7 +39,8 @@ def generateData(contNum,projNum,data):
         name = contSplit[0]
         skills = []
         for skills in range(contSplit[1]):
-            skillsplit = 1
+            skillsplit = 
+            #change
 
 
 if __name__ == "__main__":
