@@ -41,11 +41,11 @@ def solve_single_task_queue(input):
 
 def main():
     directory = 'inputFiles/'
-    test_cases = ['a_an_example.in.txt','b_better_start_small.in.txt','c_collaboration.in.txt','d_dense_schedule.in.txt','e_exceptional_skills.in.txt','f_find_great_mentors.in.txt']
+    test_cases = ['a_an_example.in.txt']
     for test in test_cases:
-        input = input(directory+test)
-        soltuion = solve_single_task_queue(input)
-        out_put.write(soltuion,"SUB-"+test)
+        inputFile = input(directory+test)
+        solution = solve_single_task_queue(inputFile)
+        out_put.write(solution,"SUB-"+test)
 
 if __name__ == '__main__':
     main()
