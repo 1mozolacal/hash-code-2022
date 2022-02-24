@@ -52,5 +52,5 @@ def file_loader(file_name: str) -> dict:
                     current_project = data_types.project()
     return {"projects": projects, "contribs": contribs}
     
-
-file_loader('inputFiles/a_an_example.in.txt')
+if __name__ == '__main__':
+    file_loader('inputFiles/a_an_example.in.txt')
