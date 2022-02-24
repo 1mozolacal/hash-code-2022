@@ -15,18 +15,18 @@ def solve_single_task_queue(input):
         current_assignments = [] # (contrib,skill)
         # get roles: list of tuple(skill,level)
         roles = current_pro.get_roles()#(skill,level)
-        abadon_project = False
+        abandon_project = False
         for role in roles:
             role_skill,role_level = role
             currently_working = [p for p,skil in current_assignments]
             peoples_skills = [p for p in contrib if not p in currently_working and p.get_skill(role_skill)>=role_level]
             people_skill_order = sorted(peoples_skills, key=lambda x: x.get_skill(role_skill))
             if len(people_skill_order) == 0:
-                abadon_project = True
+                abandon_project = True
                 break
             else:
                 current_assignments.append(people_skill_order[0],role_skill)
-        if abadon_project:
+        if abandon_project:
             continue
         else:
             directives.append((current_pro,current_assignments))
